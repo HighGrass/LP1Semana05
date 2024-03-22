@@ -11,7 +11,7 @@ namespace MyGame
 
         public Enemy(string name)
         {
-            this.name = name;
+            SetName(name);
             health = 100;
             shield = 0;
         }
@@ -30,6 +30,22 @@ namespace MyGame
         public string GetName()
         {
             return name;
+        }
+
+        public float GetHealth()
+        {
+            return health;
+        }
+
+        public void SetName(string nameGet)
+        {
+            if (nameGet.Length > 8) return;
+            this.name = nameGet;
+        }
+
+        public float GetShield()
+        {
+            return shield;
         }
 
     }
