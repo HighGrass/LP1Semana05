@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chronos", "Chronos\Chronos.csproj", "{F089C2FC-34C1-468B-A1AD-5FB6CE1E9071}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomTest", "RandomTest\RandomTest.csproj", "{1DFCAEA7-F07D-420B-8FF1-251EA5F9BD66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RanDice", "RanDice\RanDice.csproj", "{A423BB40-A176-4CCD-BD13-7D376CC35C99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{F089C2FC-34C1-468B-A1AD-5FB6CE1E9071}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F089C2FC-34C1-468B-A1AD-5FB6CE1E9071}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F089C2FC-34C1-468B-A1AD-5FB6CE1E9071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DFCAEA7-F07D-420B-8FF1-251EA5F9BD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DFCAEA7-F07D-420B-8FF1-251EA5F9BD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DFCAEA7-F07D-420B-8FF1-251EA5F9BD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DFCAEA7-F07D-420B-8FF1-251EA5F9BD66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A423BB40-A176-4CCD-BD13-7D376CC35C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A423BB40-A176-4CCD-BD13-7D376CC35C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A423BB40-A176-4CCD-BD13-7D376CC35C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A423BB40-A176-4CCD-BD13-7D376CC35C99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
