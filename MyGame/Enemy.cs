@@ -9,6 +9,8 @@ namespace MyGame
         private float health;
         private float shield;
 
+        [Flags] public enum PowerUp { health = 1 << 0, shield = 1 << 1 }
+
         public Enemy(string name)
         {
             SetName(name);
@@ -26,6 +28,28 @@ namespace MyGame
                 health -= damageStillToInflict;
                 if (health < 0) health = 0;
             }
+        }
+
+        public void PickupPowerUp(PowerUp powerUp, float f)
+        {
+            if (powerUp == PowerUp.health)
+            {
+                health += f;
+            }
+            else if (powerUp == PowerUp.shield)
+            {
+                shield += f;
+            }
+            else if (powerUp == (PowerUp.health & PowerUp.shield))
+            {
+
+                health += f;
+                shield += f;
+            }
+
+            if (health > 100f) health = 100f;
+            if (shield > 100f) shield = 100f;
+
         }
         public string GetName()
         {
