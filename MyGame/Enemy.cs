@@ -8,6 +8,7 @@ namespace MyGame
         private string name;
         private float health;
         private float shield;
+        public int enemyPowerUps;
 
         [Flags] public enum PowerUp { health = 1 << 0, shield = 1 << 1 }
 
@@ -49,6 +50,8 @@ namespace MyGame
 
             if (health > 100f) health = 100f;
             if (shield > 100f) shield = 100f;
+
+            enemyPowerUps++;
 
         }
         public string GetName()

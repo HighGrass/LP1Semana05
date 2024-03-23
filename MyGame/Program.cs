@@ -7,15 +7,18 @@ namespace MyGame
     {
         static int enemyAmount;
         static Enemy[] enemies;
+        static int PowerUpsAmount;
 
         static void Main(string[] args)
         {
 
             enemyAmount = int.Parse(args[0]);
             enemies = new Enemy[enemyAmount];
+            bool keepBoosting = true;
 
             for (int i = 0; i < enemyAmount; i++)
             {
+
                 string enemyName;
                 Console.Write("Say the name of the enemy {0}: ", i + 1);
                 enemyName = Console.ReadLine();
@@ -28,20 +31,37 @@ namespace MyGame
                 else enemies[i] = new Enemy(enemyName);
             }
 
-            for (int i = 0; i < enemies.Length; i++)
+            while (keepBoosting)
             {
-                Console.Write("Want to PowerUp Enemy " + enemies[i].GetName() + "? (y/n)");
-                string answer = Console.ReadLine();
-                if (answer == "n") continue;
-                else if (answer == "y") PowerUpEnemy(i);
 
+                for (int i = 0; i < enemyAmount + 1; i++)
+                {
+                    if (i == enemyAmount)
+                    {
+                        Console.Write("Do you want to keep PoweringUp Enemys? (y/n)");
+                        string keepBoost = Console.ReadLine();
+
+                        if (keepBoost != "y") keepBoosting = false;
+                        break;
+                    }
+                    else
+                    {
+                        Console.Write("Want to PowerUp Enemy " + enemies[i].GetName() + "? (y/n)");
+                        string answer = Console.ReadLine();
+                        if (answer == "n") continue;
+                        else if (answer == "y") PowerUpEnemy(i);
+                    }
+                }
             }
 
             for (int i = 0; i < enemies.Length; i++)
             {
                 enemies[i].TakeDamage(10);
+                PowerUpsAmount += enemies[i].enemyPowerUps;
                 Console.WriteLine("{0} {1} {2}", enemies[i].GetName(), enemies[i].GetHealth(), enemies[i].GetShield());
             }
+
+            Console.WriteLine("Total of PowerUps: " + PowerUpsAmount);
 
 
         }
