@@ -16,10 +16,23 @@ namespace MyGame
             for (int i = 0; i < enemyAmount; i++)
             {
                 string enemyName;
-                Console.Write("Choose the name of the enemy " + (i + 1) + ":");
+                Console.Write("Say the name of the enemy {0}: ", i + 1);
                 enemyName = Console.ReadLine();
-                enemies[i] = new Enemy(enemyName);
+
+                if (enemyName.Length > 8 || enemyName.Length < 1)
+                {
+                    Console.WriteLine("Choose a name between 1-8 digits!");
+                    i--;
+                }
+                else
+                {
+
+                    enemies[i] = new Enemy(enemyName);
+                }
+
             }
+
+
             for (int i = 0; i < enemies.Length; i++)
             {
                 Console.WriteLine("{0} {1} {2}", enemies[i].GetName(), enemies[i].GetHealth(), enemies[i].GetShield());
